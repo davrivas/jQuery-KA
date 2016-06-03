@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project: Scene change</title>
+        <style>
+        #leafers {
+            position: absolute;
+            top: 210px;
+            left: 378px;
+        }
+        
+        #piceratops {
+            position: absolute;
+            top: 315px;
+            left: 295px;
+        }
+        
+        #hopper {
+            position: absolute;
+            height: auto;
+            width: 75px;
+            top: 390px;
+            left: 435px;
+        }
+            
+        </style>
+    </head>
+    <body>
+
+    <img id="scenery" src="https://www.kasandbox.org/programming-images/landscapes/beach-with-palm-trees.png">
+
+    <img id="leafers" src="https://www.kasandbox.org/programming-images/avatars/leafers-seedling.png">
+    
+    <img id="piceratops" src="https://www.kasandbox.org/programming-images/avatars/piceratops-seedling.png">
+    
+    <img id="hopper" src="https://www.kasandbox.org/programming-images/creatures/Hopper-Happy.png">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
+    <script>
+        var $sound = $("<audio preload=auto>");
+        $sound.attr("src",
+        "https://www.kasandbox.org/programming-sounds/rpg/step-heavy.mp3");
+        
+        $("#scenery").on("click", function(event){
+            $("#scenery").attr("src", "https://www.kasandbox.org/programming-images/landscapes/fields-of-wine.png").css("height", "500px").css("height", "480px").css("width", "640px");
+        });
+
+        $("#leafers").on("click", function(event) {
+            $("#leafers").attr("src", "https://www.kasandbox.org/programming-images/avatars/leafers-sapling.png");
+            $sound[0].play().appendTo("body");
+        });
+        
+        $("#piceratops").on("click", function(event) {
+            $("#piceratops").attr("src", "https://www.kasandbox.org/programming-images/avatars/piceratops-sapling.png");
+            $sound[0].play().appendTo("body");
+        });
+        
+        $("#hopper").on("click", function(event) {
+            $("#hopper").attr("src", "https://www.kasandbox.org/programming-images/creatures/Hopper-Jumping.png").css("top", "350px");
+            $sound[0].play().appendTo("body");
+        });
+    </script>
+    </body>
+</html>
